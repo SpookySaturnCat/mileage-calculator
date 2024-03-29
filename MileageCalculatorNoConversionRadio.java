@@ -90,6 +90,9 @@ public class MileageCalculatorNoConversionRadio extends Application {
         btnReset.setOnAction(e -> resetForm());
         rbMPG.setOnAction(e -> changeLabels());
         rbKPL.setOnAction(e -> changeLabels());
+        tfDistance.setOnAction(e -> calcMileage());
+        tfCapacity.setOnAction(e -> calcMileage());
+        tfResult.setOnAction(e -> calcMileage());
         
         // create a scene and place it in the stage
         Scene scene = new Scene(mainPane); 
@@ -103,21 +106,7 @@ public class MileageCalculatorNoConversionRadio extends Application {
         tfDistance.requestFocus();
         
         // enter key functionality
-        tfDistance.setOnKeyPressed(event -> {
-        	if (event.getCode() == KeyCode.ENTER) {
-        		calcMileage();
-        	}
-        });
-        tfCapacity.setOnKeyPressed(event -> {
-        	if (event.getCode() == KeyCode.ENTER) {
-        		calcMileage();
-        	}
-        });
-        tfResult.setOnKeyPressed(event -> {
-        	if (event.getCode() == KeyCode.ENTER) {
-        		calcMileage();
-        	}
-        });
+        
         
     }
     
