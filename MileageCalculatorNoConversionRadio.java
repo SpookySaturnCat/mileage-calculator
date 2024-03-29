@@ -9,6 +9,7 @@
 package epa;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -72,7 +73,6 @@ public class MileageCalculatorNoConversionRadio extends Application {
         
         // add items to mainPane
         mainPane.add(lblEffType, 0, 0);
-        // add radios
         mainPane.add(rbMPG, 0, 1);
         mainPane.add(rbKPL, 1, 1);
         mainPane.add(lblDistance, 0, 2);
@@ -86,8 +86,9 @@ public class MileageCalculatorNoConversionRadio extends Application {
         
         // register action handlers
         btnCalc.setOnAction(e -> calcMileage());
-
         btnReset.setOnAction(e -> resetForm());
+        rbMPG.setOnAction(e -> changeLabels());
+        rbKPL.setOnAction(e -> changeLabels());
         
         // create a scene and place it in the stage
         Scene scene = new Scene(mainPane); 
@@ -99,6 +100,8 @@ public class MileageCalculatorNoConversionRadio extends Application {
         
         // stick default focus in first field for usability
         tfDistance.requestFocus();
+        
+        
     }
     
     /**
