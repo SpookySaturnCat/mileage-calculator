@@ -159,7 +159,12 @@ public class MileageCalculatorNoConversionRadio extends Application {
         double result = 0.0;
         
        	// MPG
-       	result = (capacity != 0) ? distance/capacity : 0;       	
+        if (tgConv.getSelectedToggle().equals(rbMPG)) {
+        	result = (capacity != 0) ? distance/capacity : 0;
+        } else {
+        	result = (capacity != 0) ? capacity/distance * 100 : 0;
+        }
+        
     
 	    // update calculation fields with currency formatting
         tfResult.setText(String.format("%.2f", result));
