@@ -17,6 +17,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
@@ -101,6 +102,22 @@ public class MileageCalculatorNoConversionRadio extends Application {
         // stick default focus in first field for usability
         tfDistance.requestFocus();
         
+        // enter key functionality
+        tfDistance.setOnKeyPressed(event -> {
+        	if (event.getCode() == KeyCode.ENTER) {
+        		calcMileage();
+        	}
+        });
+        tfCapacity.setOnKeyPressed(event -> {
+        	if (event.getCode() == KeyCode.ENTER) {
+        		calcMileage();
+        	}
+        });
+        tfResult.setOnKeyPressed(event -> {
+        	if (event.getCode() == KeyCode.ENTER) {
+        		calcMileage();
+        	}
+        });
         
     }
     
